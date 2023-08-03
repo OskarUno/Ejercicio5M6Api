@@ -5,9 +5,16 @@ import com.awakelab.oskar.ejercicio5m6.data.remote.TerrenoApi
 
 class Repositorio(private val terrenoApi: TerrenoApi) {
 
-    /*
-    fun cargarTerreno(): List<Terreno>{
-       return terrenoApi.getData()
+
+    suspend fun cargarTerreno(): List<Terreno> {
+        val respuesta = terrenoApi.getData()
+        if (respuesta.isSuccessful) {
+            val res = respuesta.body()
+            res?.let {
+                return it
+            }
+        }
+        return emptyList()
     }
-    */
+
 }

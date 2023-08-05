@@ -12,7 +12,9 @@ class Repositorio(
     private val terrenoDao: TerrenoDao,
 ) {
 
+    fun obtenerTerreno(id:String): LiveData<TerrenoEntity> = terrenoDao.getTerreno(id)
     fun obtenerTerrenos(): LiveData<List<TerrenoEntity>> = terrenoDao.getAllTerrenos()
+
 
     //
     suspend fun cargarTerreno() {

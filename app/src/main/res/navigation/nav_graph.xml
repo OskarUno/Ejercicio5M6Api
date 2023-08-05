@@ -9,5 +9,18 @@
         android:id="@+id/listadoTerrenos"
         android:name="com.awakelab.oskar.ejercicio5m6.vista.ListadoTerrenos"
         android:label="fragment_listado_terrenos"
-        tools:layout="@layout/fragment_listado_terrenos" />
+        tools:layout="@layout/fragment_listado_terrenos" >
+        <action
+            android:id="@+id/action_listadoTerrenos_to_detalleFragment"
+            app:destination="@id/detalleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleFragment"
+        android:name="com.awakelab.oskar.ejercicio5m6.vista.DetalleFragment"
+        android:label="fragment_detalle"
+        tools:layout="@layout/fragment_detalle" >
+        <action
+            android:id="@+id/action_detalleFragment_to_listadoTerrenos"
+            app:destination="@id/listadoTerrenos" />
+    </fragment>
 </navigation>

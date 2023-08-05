@@ -35,9 +35,9 @@ class ListadoTerrenos : Fragment() {
         binding.rv.adapter = adapter
 
         terrenoVM.terrenosLiveData().observe(viewLifecycleOwner) {
-
             adapter.setData(it)
         }
+
 
         //    adapter.setData(TerrenoVM.)
     }

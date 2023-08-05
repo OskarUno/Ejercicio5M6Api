@@ -15,6 +15,7 @@ class TerrenoVM(aplication: Application) : AndroidViewModel(aplication) {
 
     //val terrenosLiveData = MutableLiveData<List<Terreno>>()
     fun terrenosLiveData() = repositorio.obtenerTerrenos()
+    fun terrenoLiveData(id:String) = repositorio.obtenerTerreno(id)
 
     init {
         val api = TerrenoRetroFit.getRetrofitTerreno()
